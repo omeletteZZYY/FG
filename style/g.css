@@ -1,0 +1,75 @@
+.slider-section {
+    margin: 50px 0;
+}
+
+.slider-container {
+    max-width: 1200px;
+    height: 375px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-image {
+    height: 100%;
+    width: 100%;
+    background-image: url('e:/STY/img/cafe/c.jpg'); /* По умолчанию изображение */
+    background-position: center center;
+    background-size: cover;
+    transition: transform 0.5s ease-in-out;
+    z-index: 2; /* Обеспечиваем, чтобы изображение не перекрывало стрелки */
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0;
+    transition: opacity 350ms ease-in-out;
+    z-index: 3; /* Стрелки должны быть поверх изображения */
+}
+
+.slider-arrow.left {
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.slider-arrow.right {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.slider-container:hover .slider-arrow {
+    opacity: 1; /* Показываем стрелки при наведении */
+}
+
+.slider-container:hover .slider-image {
+    transform: scale(1.05); /* Увеличиваем изображение при наведении */
+}
+
+.carousel {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Делаем их круглыми */
+    background-color: #A79277; /* Цвет индикатора */
+    border: none; /* Убираем рамку */
+    margin: 0 5px; /* Пространство между индикаторами */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-indicators button:hover {
+    transform: scale(1.2); /* Увеличение при наведении */
+    background-color: #D1BB9E; /* Меняем цвет при наведении */
+}
+
+.carousel-indicators .active {
+    background-color: #EAD8C0; /* Активный индикатор другого цвета */
+    transform: scale(1.3); /* Активный индикатор чуть крупнее */
+}
